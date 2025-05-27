@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{3753AAA6-E165-C360-7C04-A3BF2596FDF6}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument=".gitignore">
+    <Files>
+      <File FileName="Assets/Scripts/GameInputActions.cs" Line="15" Column="31" />
+      <File FileName="Assets/Scripts/Component.cs" Line="109" Column="6" />
+      <File FileName="Assets/Scripts/ItemButton.cs" Line="71" Column="10" />
+      <File FileName=".gitignore" Line="85" Column="88" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PlanoverseAssessment" expanded="True">
+            <Node name="Solution Items" expanded="True">
+              <Node name="/Users/yuankomah/PlanoverseAssessment/.gitignore" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Unity" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d3e4e956-bdbe-44aa-b43d-23fe35f40ee8" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
