@@ -104,6 +104,6 @@ public class Component : MonoBehaviour
         if (updatedPosition != Vector3.zero)
         {
             transform.position = Vector3.Lerp(transform.position, updatedPosition, Time.deltaTime * 15f);
-        }
+        } 
     }
 }

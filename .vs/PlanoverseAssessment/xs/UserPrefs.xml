@@ -1,12 +1,11 @@
 ﻿<Properties StartupConfiguration="{3753AAA6-E165-C360-7C04-A3BF2596FDF6}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Component.cs">
     <Files>
-      <File FileName="Assets/Scripts/ComponentUI.cs" Line="10" Column="5" />
-      <File FileName="Assets/Scripts/GameInputActions.cs" />
-      <File FileName="Assets/Scripts/Component.cs" Line="10" Column="5" />
-      <File FileName="Assets/Scripts/ItemButton.cs" />
+      <File FileName="Assets/Scripts/ItemButton.cs" Line="26" Column="10" IsPinned="True" />
+      <File FileName="Assets/Scripts/GameInputActions.cs" Line="20" Column="6" />
       <File FileName="Assets/Scripts/Collision.cs" />
       <File FileName="Assets/Scripts/InputActions.cs" />
+      <File FileName="Assets/Scripts/Component.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +13,7 @@
           <Node name="PlanoverseAssessment" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Collision.cs" selected="True" />
+                <Node name="Component.cs" selected="True" />
               </Node>
             </Node>
           </Node>

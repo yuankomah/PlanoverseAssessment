@@ -61,10 +61,7 @@ public class ItemButton : MonoBehaviour
         {
             previewObject.transform.position = Vector3.Lerp(previewObject.transform.position,
             updatedPosition, Time.deltaTime * 15f);
-            ShowPreview();
-        } else
-        {
-            HidePreview();
+           
         }
     }
 }
