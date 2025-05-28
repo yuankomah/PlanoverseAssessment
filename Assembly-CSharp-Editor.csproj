@@ -62,6 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
+    <Compile Include="Assets\Scripts\ComponentMoveUI.cs" />
+    <Compile Include="Assets\Scripts\ComponentRotateUI.cs" />
+    <Compile Include="Assets\Scripts\ComponentRemoveUI.cs" />
+    <Compile Include="Assets\Scripts\NewMonoBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

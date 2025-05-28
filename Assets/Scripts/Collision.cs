@@ -21,18 +21,4 @@ public static class Collision
 
         return totalCollision >= minimumCollisionNeeded;
     }
-
-    public static Vector3 GetUpdatedPosition()
-    {
-        Vector3 mousePos = Mouse.current.position.ReadValue();
-
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        if (Physics.Raycast(ray, out RaycastHit hit, Collision.RAY_MAXIMUM_RANGE, Collision.DEFAULT_LAYER))
-        {
-            return new Vector3(hit.point.x, Collision.BASE_POSITION_Y, hit.point.z);
-        }
-
-        return Vector3.zero;
-
-    }
 }

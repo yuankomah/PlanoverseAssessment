@@ -1,20 +1,22 @@
 ﻿<Properties StartupConfiguration="{3753AAA6-E165-C360-7C04-A3BF2596FDF6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ComponentUI.cs">
     <Files>
       <File FileName="Assets/Scripts/ItemButton.cs" Line="21" Column="13" IsPinned="True" />
-      <File FileName="Assets/Scripts/GameInputActions.cs" Line="20" Column="6" />
-      <File FileName="Assets/Scripts/Collision.cs" Line="2" Column="31" />
-      <File FileName="Assets/Scripts/InputActions.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Component.cs" Line="58" Column="24" />
+      <File FileName="Assets/Scripts/GameInputActions.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Collision.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/InputActions.cs" />
+      <File FileName="Assets/Scripts/Component.cs" Line="59" Column="1" />
+      <File FileName="Assets/Scripts/NewMonoBehaviour.cs" Line="55" Column="45" />
+      <File FileName="Assets/Scripts/NewMonoBehaviour.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/NewMonoBehaviour.cs" Line="13" Column="6" />
+      <File FileName="Assets/Scripts/NewMonoBehaviour.cs" Line="4" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="PlanoverseAssessment" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="ItemButton.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -23,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="cbb7dec1-f501-47a5-b92b-2de414860e33" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="71224246-ab4e-4642-82e2-1294abd6db37" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -9,6 +9,7 @@ public class ItemButton : MonoBehaviour
     [SerializeField] private Component itemObject;
     [SerializeField] private Component previewObject;
     private bool selected = false;
+    private const float SPEED_MULTIPLIER = 15f;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class ItemButton : MonoBehaviour
     private void GameInputActions_ClickInput(object sender, System.EventArgs e)
     {
         if (!selected) return;
-        Vector3 placementPosition = Collision.GetUpdatedPosition();
+        Vector3 placementPosition = ComponentMoveUI.GetUpdatedPosition();
         if (placementPosition != Vector3.zero && !Collision.CollideWithComponent(placementPosition))
         {
             Instantiate(itemObject, placementPosition, Quaternion.identity);
@@ -56,11 +57,11 @@ public class ItemButton : MonoBehaviour
     {
         if (!selected) return;
 
-        Vector3 updatedPosition = Collision.GetUpdatedPosition();
+        Vector3 updatedPosition = ComponentMoveUI.GetUpdatedPosition();
         if (updatedPosition != Vector3.zero)
         {
             previewObject.transform.position = Vector3.Lerp(previewObject.transform.position,
-            updatedPosition, Time.deltaTime * 15f);
+            updatedPosition, Time.deltaTime * SPEED_MULTIPLIER);
            
         }
     }
