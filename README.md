@@ -7,6 +7,6 @@
 
 ### What I’d add with more time
 - Fix Bugs (Moving the object & Adding the object to the floor has some slightly glitches issues)
+- Enable camera movement
 - Snap-to-grid placement
-- Item rotation animation
 - Save/load layout state
