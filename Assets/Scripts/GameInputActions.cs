@@ -16,6 +16,11 @@ public class GameInputActions : MonoBehaviour
         inputActions.Component.Click.performed += Click_Performed;
     }
 
+    private void OnDestroy()
+    {
+        inputActions.Component.Click.performed -= Click_Performed;
+    }
+
     private void Click_Performed(UnityEngine.InputSystem.InputAction.CallbackContext e)
     {
         ClickInput?.Invoke(this, EventArgs.Empty);

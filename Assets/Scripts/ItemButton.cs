@@ -6,8 +6,8 @@ public class ItemButton : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;
     [SerializeField] private Button button;
-    [SerializeField] private GameObject itemObject;
-    [SerializeField] private GameObject previewObject;
+    [SerializeField] private Component itemObject;
+    [SerializeField] private Component previewObject;
     private bool selected = false;
 
     void Start()
@@ -19,16 +19,10 @@ public class ItemButton : MonoBehaviour
     private void GameInputActions_ClickInput(object sender, System.EventArgs e)
     {
         if (!selected) return;
-
-        Vector3 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        if (Physics.Raycast(ray, out RaycastHit hit, Collision.RAY_MAXIMUM_RANGE, Collision.DEFAULT_LAYER))
+        Vector3 placementPosition = Collision.GetUpdatedPosition();
+        if (placementPosition != Vector3.zero && !Collision.CollideWithComponent(placementPosition))
         {
-            Vector3 placementPosition = new Vector3(hit.point.x, Collision.BASE_POSITION_Y, hit.point.z);
-            if (!Collision.CollideWithComponent(placementPosition))
-            {
-                Instantiate(itemObject, placementPosition, Quaternion.identity);
-            }
+            Instantiate(itemObject, placementPosition, Quaternion.identity);
         }
         ButtonClicked();
     }
@@ -50,29 +44,27 @@ public class ItemButton : MonoBehaviour
 
     private void HidePreview()
     {
-        previewObject.SetActive(false);
+        previewObject.gameObject.SetActive(false);
     }
 
     private void ShowPreview()
     {
-        previewObject.SetActive(true);
+        previewObject.gameObject.SetActive(true);
     }
 
     void Update()
     {
         if (!selected) return;
 
-        Vector3 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        if (Physics.Raycast(ray, out RaycastHit hit, Collision.RAY_MAXIMUM_RANGE, Collision.DEFAULT_LAYER))
+        Vector3 updatedPosition = Collision.GetUpdatedPosition();
+        if (updatedPosition != Vector3.zero)
         {
-            if (!previewObject.activeSelf) ShowPreview();
-            previewObject.transform.position = new Vector3(hit.point.x, Collision.BASE_POSITION_Y, hit.point.z);
-        }
-        else if (previewObject.activeSelf)
+            previewObject.transform.position = Vector3.Lerp(previewObject.transform.position,
+            updatedPosition, Time.deltaTime * 15f);
+            ShowPreview();
+        } else
         {
             HidePreview();
         }
-
     }
 }

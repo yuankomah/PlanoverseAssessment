@@ -14,6 +14,7 @@ public class Component : MonoBehaviour
     private Vector3 position;
     private bool onMove;
     private float countdown;
+    private const float ROTATION = 45f;
     private const float maxCountdown = 5f;
 
     private void Awake()
@@ -44,16 +45,11 @@ public class Component : MonoBehaviour
     private void GameInputAction_ClickInput(object sender, System.EventArgs e)
     {
         if (!onMove) return;
-        Vector3 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        if (Physics.Raycast(ray, out RaycastHit hit, Collision.RAY_MAXIMUM_RANGE, Collision.DEFAULT_LAYER))
+        Vector3 placementPosition = Collision.GetUpdatedPosition();
+        if (placementPosition != Vector3.zero && !Collision.CollideWithComponent(placementPosition))
         {
-            Vector3 placementPosition = new Vector3(hit.point.x, Collision.BASE_POSITION_Y, hit.point.z);
-            if (!Collision.CollideWithComponent(placementPosition))
-            {
-                transform.position = placementPosition;
-                SetPosition(placementPosition);
-            }
+            transform.position = placementPosition;
+            SetPosition(placementPosition);
         } else
         {
             SetPosition(position);
@@ -74,13 +70,22 @@ public class Component : MonoBehaviour
     private void RotateObject()
     {
         countdown = maxCountdown;
-        componentObject.transform.Rotate(Vector3.up, 45f);
+        componentObject.transform.Rotate(Vector3.up, ROTATION);
     }
 
     private void ShowButtons()
     {
         countdown = maxCountdown;
         image.gameObject.SetActive(true);
+    }
+
+    private void UpdateButtons()
+    {
+        if (countdown > 0f)
+        {
+            countdown -= Time.deltaTime;
+            if (countdown < 0f) HideButtons();
+        }
     }
 
     private void HideButtons()
@@ -92,19 +97,13 @@ public class Component : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (countdown > 0f)
-        {
-            countdown -= Time.deltaTime;
-            if (countdown < 0f) HideButtons();
-        }
-
+        UpdateButtons();
         if (!onMove) return;
 
-        Vector3 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        if (Physics.Raycast(ray, out RaycastHit hit, Collision.RAY_MAXIMUM_RANGE, Collision.DEFAULT_LAYER))
+        Vector3 updatedPosition = Collision.GetUpdatedPosition();
+        if (updatedPosition != Vector3.zero)
         {
-            transform.position = new Vector3(hit.point.x, Collision.BASE_POSITION_Y, hit.point.z);
+            transform.position = Vector3.Lerp(transform.position, updatedPosition, Time.deltaTime * 15f);
         }
     }
 }
